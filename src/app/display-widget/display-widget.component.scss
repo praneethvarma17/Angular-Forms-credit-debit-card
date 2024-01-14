@@ -1,0 +1,10 @@
+.example-card {
+  display: inline-block;
+  border: 2px solid black;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.title {
+  position: relative;
+  right: 0px;
+}

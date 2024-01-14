@@ -1,0 +1,25 @@
+.reactive-form {
+  position: relative;
+  display: inline-block;
+  // top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid green;
+}
+
+.reactive-form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 25px;
+  height: 200px;
+}
+
+.submit-button {
+  // position: relative;
+  // right: auto;
+  // left : 80px;
+  // padding: px;
+  width: 50px;
+  height: 25px;
+}

@@ -1,0 +1,17 @@
+.forms {
+  display: block;
+  // position: relative;
+}
+app-reactive {
+  display: inline-block;
+  position: relative;
+  width: 48%;
+  border: 2px solid red;
+}
+app-template-driven {
+  display: inline-block;
+  // width: 50%;
+  position: relative;
+  width: 50%;
+  border: 2px solid red;
+}
