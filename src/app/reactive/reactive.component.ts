@@ -8,7 +8,6 @@ import { FormServiceService } from '../form-service.service';
   selector: 'app-reactive',
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule, MatButtonModule],
-  providers: [FormServiceService],
   templateUrl: './reactive.component.html',
   styleUrl: './reactive.component.scss'
 })
@@ -25,7 +24,13 @@ export class ReactiveComponent {
       cardNo: this.cardDetails.get('cardNo')?.value,
       name: this.cardDetails.get('name')?.value
     }
-    this.formService.emitData("formData");
-    // console.log(this.cardDetails.get('cardNo')?.value)
+    this.formService.emitData(formData);
+  }
+
+  formatCardNumber() {
+    let value = this.cardDetails.get('cardNo')?.value;
+    value = value.replace(/-/g, ''); // Remove existing spaces
+    const formattedValue = value.replace(/(\d{4})/g, '$1-').replace(/-$/g,'');
+    this.cardDetails.get('cardNo')?.setValue(formattedValue);
   }
 }
