@@ -1,22 +1,14 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class FormServiceService {
 
-  public myFormData$ = new Subject<string>();
+  public myFormData$ = new BehaviorSubject<any>( {name: "", cardNo: ""});
 
-  emitData (data: string) {
+  emitData (data: any) {
     console.log('Im emitting', data)
+
     this.myFormData$.next(data);
-    // this.myFormData$.subscribe(res=>{console.log(res)})
-  }
-
-  getData () {
-    let data;
-
-    return this.myFormData$
   }
 }

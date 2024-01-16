@@ -2,7 +2,7 @@
   <h3>Enter Data (Reactive Forms)</h3>
   <form [formGroup]="cardDetails" (ngSubmit)="entered($event)" class="reactive-form-content">
     <label for="cardNo">Card No</label>
-    <input type="text" formControlName="cardNo" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+    <input type="text" [maxLength]="19" formControlName="cardNo" placeholder="xxxx-xxxx-xxxx-xxxx" (input)="formatCardNumber()"/>
 
     <label for="name">Name</label>
     <input type="text" formControlName="name" placeholder="NITHIN VARMA"/>
